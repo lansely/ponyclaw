@@ -41,8 +41,8 @@ func NewMigrateCommand() *cobra.Command {
 		"Skip confirmation prompts")
 	cmd.Flags().StringVar(&opts.OpenClawHome, "openclaw-home", "",
 		"Override OpenClaw home directory (default: ~/.openclaw)")
-	cmd.Flags().StringVar(&opts.PicoClawHome, "picoclaw-home", "",
-		"Override PicoClaw home directory (default: ~/.picoclaw)")
+	cmd.Flags().StringVar(&opts.PicoClawHome, "ponyclaw-home", "",
+		"Override PonyClaw home directory (default: ~/.ponyclaw)")
 
 	return cmd
 }

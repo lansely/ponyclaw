@@ -20,7 +20,7 @@ var (
 
 func GetConfigPath() string {
 	home, _ := os.UserHomeDir()
-	return filepath.Join(home, ".picoclaw", "config.json")
+	return filepath.Join(home, ".ponyclaw", "config.json")
 }
 
 func LoadConfig() (*config.Config, error) {
