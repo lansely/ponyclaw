@@ -76,7 +76,7 @@ func Run(opts Options) (*Result, error) {
 		return nil, err
 	}
 
-	fmt.Println("Migrating from OpenClaw to PicoClaw")
+	fmt.Println("Migrating from OpenClaw to PonyClaw")
 	fmt.Printf("  Source:      %s\n", openclawHome)
 	fmt.Printf("  Destination: %s\n", picoClawHome)
 	fmt.Println()
@@ -118,7 +118,7 @@ func Plan(opts Options, openclawHome, picoClawHome string) ([]Action, []string, 
 				Type:        ActionConvertConfig,
 				Source:      configPath,
 				Destination: filepath.Join(picoClawHome, "config.json"),
-				Description: "convert OpenClaw config to PicoClaw format",
+				Description: "convert OpenClaw config to PonyClaw format",
 			})
 
 			data, err := LoadOpenClawConfig(configPath)
@@ -225,7 +225,7 @@ func executeConfigMigration(srcConfigPath, dstConfigPath, picoClawHome string) e
 	if _, err := os.Stat(dstConfigPath); err == nil {
 		existing, err := config.LoadConfig(dstConfigPath)
 		if err != nil {
-			return fmt.Errorf("loading existing PicoClaw config: %w", err)
+			return fmt.Errorf("loading existing PonyClaw config: %w", err)
 		}
 		incoming = MergeConfig(existing, incoming)
 	}

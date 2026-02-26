@@ -193,7 +193,7 @@ func TestConvertConfig(t *testing.T) {
 		if len(warnings) != 1 {
 			t.Fatalf("expected 1 warning, got %d", len(warnings))
 		}
-		if warnings[0] != "Provider 'unknown_provider' not supported in PicoClaw, skipping" {
+		if warnings[0] != "Provider 'unknown_provider' not supported in PonyClaw, skipping" {
 			t.Errorf("unexpected warning: %s", warnings[0])
 		}
 	})
@@ -247,7 +247,7 @@ func TestConvertConfig(t *testing.T) {
 		if len(warnings) != 1 {
 			t.Fatalf("expected 1 warning, got %d", len(warnings))
 		}
-		if warnings[0] != "Channel 'email' not supported in PicoClaw, skipping" {
+		if warnings[0] != "Channel 'email' not supported in PonyClaw, skipping" {
 			t.Errorf("unexpected warning: %s", warnings[0])
 		}
 	})
@@ -701,7 +701,7 @@ func TestRunFullMigration(t *testing.T) {
 
 	picoConfig, err := config.LoadConfig(filepath.Join(picoClawHome, "config.json"))
 	if err != nil {
-		t.Fatalf("loading PicoClaw config: %v", err)
+		t.Fatalf("loading PonyClaw config: %v", err)
 	}
 	if picoConfig.Providers.Anthropic.APIKey != "sk-ant-migrate-test" {
 		t.Errorf("Anthropic.APIKey = %q, want %q", picoConfig.Providers.Anthropic.APIKey, "sk-ant-migrate-test")
